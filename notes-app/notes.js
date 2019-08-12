@@ -33,6 +33,21 @@ const removeNote = (title) => {
     saveNotes(remainingNotes)
 }
 
+const listNotes = () => {
+    const notes = loadNotes()
+    
+    if (notes.length > 0) {
+        console.log(chalk.blue.bold('Your notes:'))
+
+        notes.forEach((note) => {
+            console.log(note.title)
+        })
+
+    } else {
+        console.log(chalk.yellow.inverse('No notes exist!'))
+    }
+}
+
 const saveNotes = (notes) => {
     const dataJSON = JSON.stringify(notes)
     fs.writeFileSync('notes.json', dataJSON)
@@ -53,6 +68,6 @@ const loadNotes = () => {
 module.exports = {
     getNotes: getNotes,
     addNote: addNote,
-    removeNote: removeNote
+    removeNote: removeNote,
+    listNotes: listNotes
 }
-

@@ -48,7 +48,7 @@ yargs.command({
     command: 'list',
     describe: 'Listing all notes place holder',
     handler() {
-        console.log('Here\'s a list of your notes:')
+        notes.listNotes()
     }
 })
 
