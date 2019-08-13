@@ -1,0 +1,6 @@
+
+# Dependency directories
+notes-app/node_modules/
+
+# Playground files
+playground/
